@@ -7,11 +7,6 @@ from config import config
 bot = Bot(token=config.bot_token.get_secret_value())
 
 
-@router.message(Command("start"))
-async def cmd_start(message: types.Message):
-    await message.answer(f'Привет ЧОРТ --- {message.from_user.username}')
-
-
 @router.message(Command("stop"))
 async def cmd_stop(message: types.Message):
 

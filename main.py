@@ -7,6 +7,13 @@ from config import config
 from modes import spy, dolbaeb
 
 dp = Dispatcher()
+mode_dolbaeb = False
+mode_spy = False
+
+@dp.message(Command("start"))
+async def cmd_start(message: types.Message):
+    await message.answer(f'')
+
 
 async def main():
     bot = Bot(token=config.bot_token.get_secret_value())
